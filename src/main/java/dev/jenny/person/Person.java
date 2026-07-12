@@ -17,4 +17,8 @@ public class Person {
     public String getName() {
         return this.name;
     }
+
+    public String getLastName() {
+        return this.lastName;
+    }
 }
