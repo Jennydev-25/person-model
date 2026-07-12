@@ -19,7 +19,6 @@ public class Person {
     }
 
     public String getLastName() {
-        String result = this.lastName;
-        return result;
+        return this.lastName;
     }
 }
