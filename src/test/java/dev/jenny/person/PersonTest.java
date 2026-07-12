@@ -21,4 +21,11 @@ class PersonTest {
 
         assertThat(person.getName(), is("Jenny"));
     }
+
+    @Test
+    void testGetLastNameReturnsLastName() {
+        Person person = new Person("Jenny", "Sanchez", "12345678Z", 1995);
+
+        assertThat(person.getLastName(), is("Sanchez"));
+    }
 }
