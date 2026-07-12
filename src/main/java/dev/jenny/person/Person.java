@@ -27,7 +27,6 @@ public class Person {
     }
 
     public int getBirthYear() {
-        int result = this.birthYear;
-        return result;
+        return this.birthYear;
     }
 }
