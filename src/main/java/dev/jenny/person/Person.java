@@ -21,4 +21,9 @@ public class Person {
     public String getLastName() {
         return this.lastName;
     }
+
+    public String getDocument() {
+        String result = this.document;
+        return result;
+    }
 }
