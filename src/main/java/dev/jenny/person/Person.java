@@ -1,5 +1,5 @@
 package dev.jenny.person;
 
-public class AppTest {
+public class Person {
     
 }
