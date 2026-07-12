@@ -23,7 +23,6 @@ public class Person {
     }
 
     public String getDocument() {
-        String result = this.document;
-        return result;
+        return this.document;
     }
 }
