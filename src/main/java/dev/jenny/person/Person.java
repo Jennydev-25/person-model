@@ -1,17 +1,21 @@
 package dev.jenny.person;
 
+import java.time.Year;
+
 public class Person {
 
     private String name;
     private String lastName;
     private String document;
     private int birthYear;
+    private int age;
 
     public Person(String name, String lastName, String document, int birthYear) {
         this.name = name;
         this.lastName = lastName;
         this.document = document;
         this.birthYear = birthYear;
+        this.age = calculateAge();
     }
 
     public String getName() {
@@ -28,5 +32,15 @@ public class Person {
 
     public int getBirthYear() {
         return this.birthYear;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public int calculateAge() {
+        int currentYear = Year.now().getValue();
+        int age = currentYear - this.birthYear;
+        return age;
     }
 }
