@@ -14,4 +14,11 @@ class PersonTest {
 
         assertThat(person, is(notNullValue()));
     }
+
+    @Test
+    void testGetNameReturnsName() {
+        Person person = new Person("Jenny", "Sanchez", "12345678Z", 1995);
+
+        assertThat(person.getName(), is("Jenny"));
+    }
 }
