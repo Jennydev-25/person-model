@@ -35,4 +35,11 @@ class PersonTest {
 
         assertThat(person.getDocument(), is("12345678Z"));
     }
+
+    @Test
+    void testGetBirthYearReturnsBirthYear() {
+        Person person = new Person("Jenny", "Sanchez", "12345678Z", 1995);
+
+        assertThat(person.getBirthYear(), is(1995));
+    }
 }

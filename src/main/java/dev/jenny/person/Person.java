@@ -25,4 +25,8 @@ public class Person {
     public String getDocument() {
         return this.document;
     }
+
+    public int getBirthYear() {
+        return this.birthYear;
+    }
 }
