@@ -39,8 +39,6 @@ public class Person {
     }
 
     public int calculateAge() {
-        int currentYear = Year.now().getValue();
-        int age = currentYear - this.birthYear;
-        return age;
+        return Year.now().getValue() - this.birthYear;
     }
 }
