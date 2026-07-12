@@ -28,4 +28,11 @@ class PersonTest {
 
         assertThat(person.getLastName(), is("Sanchez"));
     }
+
+    @Test
+    void testGetDocumentReturnsDocument() {
+        Person person = new Person("Jenny", "Sanchez", "12345678Z", 1995);
+
+        assertThat(person.getDocument(), is("12345678Z"));
+    }
 }
