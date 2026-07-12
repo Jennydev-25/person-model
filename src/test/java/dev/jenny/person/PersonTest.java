@@ -4,6 +4,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
+import java.time.Year;
 import org.junit.jupiter.api.Test;
 
 class PersonTest {
@@ -41,5 +42,15 @@ class PersonTest {
         Person person = new Person("Jenny", "Sanchez", "12345678Z", 1995);
 
         assertThat(person.getBirthYear(), is(1995));
+    }
+
+    @Test
+    void testGetAgeReturnsAgeCalculatedFromBirthYear() {
+        int birthYear = 1995;
+        int expectedAge = Year.now().getValue() - birthYear;
+
+        Person person = new Person("Jenny", "Sanchez", "12345678Z", birthYear);
+
+        assertThat(person.getAge(), is(expectedAge));
     }
 }
