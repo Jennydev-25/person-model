@@ -13,4 +13,9 @@ public class Person {
         this.document = document;
         this.birthYear = birthYear;
     }
+
+    public String getName() {
+        String result = this.name;
+        return result;
+    }
 }
