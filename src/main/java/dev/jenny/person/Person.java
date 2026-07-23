@@ -15,7 +15,7 @@ public class Person {
         this.lastName = lastName;
         this.document = document;
         this.birthYear = birthYear;
-        this.age = calculateAge();
+        calculateAge();
     }
 
     public String getName() {
@@ -38,7 +38,7 @@ public class Person {
         return this.age;
     }
 
-    public int calculateAge() {
-        return Year.now().getValue() - this.birthYear;
+    private void calculateAge() {
+        this.age = Year.now().getValue() - this.birthYear;
     }
 }
