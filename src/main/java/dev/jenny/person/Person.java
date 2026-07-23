@@ -19,23 +19,23 @@ public class Person {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getLastName() {
-        return this.lastName;
+        return lastName;
     }
 
     public String getDocument() {
-        return this.document;
+        return document;
     }
 
     public int getBirthYear() {
-        return this.birthYear;
+        return birthYear;
     }
 
     public int getAge() {
-        return this.age;
+        return age;
     }
 
     private void calculateAge() {
