@@ -70,7 +70,7 @@ La clase debe tener un **constructor** que inicialice los valores de sus respect
 
 ## 📐 Diagrama de clase
 
-La clase `Person` encapsula cinco atributos privados (`name`, `lastName`, `document`, `birthYear` y `age`). El constructor recibe los cuatro primeros y calcula la `age` internamente, invocando al método `calculateAge()`. Expone un método de lectura (_getter_) por cada atributo. El número de documento se modela como `String` porque puede contener letras del DNI/NIE.
+La clase `Person` encapsula cinco atributos privados (`name`, `lastName`, `document`, `birthYear` y `age`). El constructor recibe los cuatro primeros e invoca internamente al método privado `calculateAge()`, que asigna la edad a partir del año de nacimiento. Expone un método de lectura (_getter_) por cada atributo. El número de documento se modela como `String` porque puede contener letras del DNI/NIE.
 
 ![Diagrama de clase de Person](assets/images/class-diagram-uml.png)
 
@@ -91,7 +91,7 @@ classDiagram
         +getDocument() String
         +getBirthYear() int
         +getAge() int
-        +calculateAge() int
+        -calculateAge() void
     }
 ```
 
@@ -101,16 +101,15 @@ classDiagram
 
 ## 🧪 Testing
 
-Siguiendo la metodología **TDD (Red-Green-Refactor)**, la clase `Person` se testea cubriendo todos sus escenarios, en seis iteraciones:
+Siguiendo la metodología **TDD**, la clase `Person` se testea cubriendo todos sus escenarios. Los tests comparten una misma instancia creada en el método `setUp()` anotado con `@BeforeEach`:
 
-| Test                                          | Escenario                                         |
-| --------------------------------------------- | ------------------------------------------------- |
-| `testConstructorCreatesPerson`                | Crea una persona e inicializa todos sus atributos |
-| `testGetNameReturnsName`                      | Devuelve el nombre                                |
-| `testGetLastNameReturnsLastName`              | Devuelve el apellido                              |
-| `testGetDocumentReturnsDocument`              | Devuelve el número de documento                   |
-| `testGetBirthYearReturnsBirthYear`            | Devuelve el año de nacimiento                     |
-| `testGetAgeReturnsAgeCalculatedFromBirthYear` | Calcula la edad a partir del año de nacimiento    |
+| Test               | Escenario                                      |
+| ------------------ | ---------------------------------------------- |
+| `testGetName`      | Devuelve el nombre                             |
+| `testGetLastName`  | Devuelve el apellido                           |
+| `testGetDocument`  | Devuelve el número de documento                |
+| `testGetBirthYear` | Devuelve el año de nacimiento                  |
+| `testGetAge`       | Calcula la edad a partir del año de nacimiento |
 
 ![Test de Person en verde](assets/images/test-explorer.png)
 
