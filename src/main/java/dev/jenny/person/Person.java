@@ -15,30 +15,30 @@ public class Person {
         this.lastName = lastName;
         this.document = document;
         this.birthYear = birthYear;
-        this.age = calculateAge();
+        calculateAge();
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getLastName() {
-        return this.lastName;
+        return lastName;
     }
 
     public String getDocument() {
-        return this.document;
+        return document;
     }
 
     public int getBirthYear() {
-        return this.birthYear;
+        return birthYear;
     }
 
     public int getAge() {
-        return this.age;
+        return age;
     }
 
-    public int calculateAge() {
-        return Year.now().getValue() - this.birthYear;
+    private void calculateAge() {
+        this.age = Year.now().getValue() - this.birthYear;
     }
 }
